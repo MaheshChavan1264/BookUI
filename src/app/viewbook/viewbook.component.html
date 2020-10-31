@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Book Id</th>
+        <th>Book Name</th>
+        <th>Book Author</th>
+        <th>Book Price</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of _booklist">
+          <td>{{book.id}}</td>
+          <td>{{book.name}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.price}}</td>
+         
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="submit" class="btn btn-primary" (click)="goTolist()" >Back</button>

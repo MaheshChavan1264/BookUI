@@ -1,0 +1,29 @@
+
+<div class="container">
+    <h2>Book List</h2>
+    <p>Use action to perform crud operation</p>            
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Book Id</th>
+          <th>Book Name</th>
+          <th>Book Author</th>
+          <th>Book Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of _booklist">
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td><button type="button" class="btn btn-primary" (click)="goToEditBook(book.id)">Edit</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-info" (click)="goToViewBook(book.id)">View</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="goToAddBook()">Add new book</button>
+  </div>
