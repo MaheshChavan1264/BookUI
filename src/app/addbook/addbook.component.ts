@@ -18,8 +18,7 @@ export class AddbookComponent implements OnInit {
 
   addbookformsubmit(){
     console.log(this.book);
-    this._service.addBookToRemote(this.book).subscribe(
-    
+    this._service.addBookToRemote(this.book).subscribe( 
         data=>{
           console.log('data added successfully');
           this._route.navigate(['booklist'])

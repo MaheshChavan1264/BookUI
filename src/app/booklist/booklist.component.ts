@@ -8,16 +8,18 @@ import { BookserviceService } from '../bookservice.service';
   styleUrls: ['./booklist.component.css']
 })
 export class BooklistComponent implements OnInit {
+  // tslint:disable-next-line: variable-name
   _booklist: Books[];
+  // tslint:disable-next-line: variable-name
   constructor(private _route: Router, private _service: BookserviceService) { }
 
   ngOnInit() {
     this._service.fetchBookListFromRemote().subscribe(
-      data=>{
+      data => {
         console.log('response received');
         this._booklist = data;
       },
-      error=>console.log('exception occured')
+      error => console.log('exception occured')
     )
   }
 
@@ -26,12 +28,12 @@ export class BooklistComponent implements OnInit {
   }
 
   goToEditBook(id: number){
-    console.log("id: "+id);
-    this._route.navigate(["/editbook",id])
+    console.log('id: ' + id);
+    this._route.navigate(['/editbook', id])
   }
  
   goToViewBook(id: number){
-    console.log("id: "+id);
+    console.log('id: ' + id);
     this._route.navigate(["/viewbook",id])
   }
 }
